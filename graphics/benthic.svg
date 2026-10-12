@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <defs>
+    <radialGradient id="deep" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#0b3550"/>
+      <stop offset="60%" stop-color="#061c2e"/>
+      <stop offset="100%" stop-color="#020a12"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5ff4e0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#5ff4e0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ballTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff5a5a"/>
+      <stop offset="100%" stop-color="#c22b2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="220" height="220" fill="url(#deep)"/>
+  <!-- bioluminescent motes -->
+  <circle cx="40" cy="50" r="2.5" fill="#7ff5e6" opacity="0.8"/>
+  <circle cx="180" cy="70" r="2" fill="#7ff5e6" opacity="0.6"/>
+  <circle cx="160" cy="180" r="2.5" fill="#7ff5e6" opacity="0.7"/>
+  <circle cx="55" cy="175" r="1.8" fill="#7ff5e6" opacity="0.6"/>
+  <circle cx="110" cy="30" r="1.6" fill="#7ff5e6" opacity="0.5"/>
+  <!-- glow behind the ball -->
+  <circle cx="110" cy="118" r="78" fill="url(#glow)"/>
+  <!-- pokeball sinking -->
+  <g transform="translate(110 116)">
+    <circle r="52" fill="#0a2334" stroke="#5ff4e0" stroke-width="2.5"/>
+    <path d="M -52 0 A 52 52 0 0 1 52 0 Z" fill="url(#ballTop)"/>
+    <rect x="-52" y="-4" width="104" height="8" fill="#04121d"/>
+    <circle r="15" fill="#04121d"/>
+    <circle r="9" fill="#0a2334" stroke="#5ff4e0" stroke-width="2.5"/>
+    <circle r="3.5" fill="#5ff4e0"/>
+  </g>
+</svg>

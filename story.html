@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Benthic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="graphics/benthic.svg">
+    <meta charset="UTF-8">
+    <style>
+        body { font-size: 15px; color: #dbe9ee; background-color: #04121d; }
+        h1 { color: #eaf6f4; }
+        a { color: #ffd27f; }
+        .article { max-width: 680px; margin: 0 auto; text-align: left; line-height: 1.9; }
+        .article p { margin: 0 0 1.15em 0; }
+        .save { font-family: Consolas, monospace; color: #ff6b6b; letter-spacing: 1px; }
+        .sign { color: #7fb8c9; font-size: 13px; margin-top: 2em; }
+        .nav { font-size: 13px; margin-bottom: 1.5em; }
+    </style>
+</head>
+<body>
+
+    <br>
+    <center>
+        <h1>the save that wouldn't stay deleted</h1>
+        <a href="index.html"><img src="graphics/benthic.svg" width="150" alt="Benthic"></a>
+
+        <div class="article">
+            <p class="nav"><a href="index.html">back home</a></p>
+
+            <p>I'm not gonna pretend I'm somebody. I'm just a dev. For about two years I worked in a weird little corner of AI: agents that play Pokémon.</p>
+
+            <p>If you've never seen that world — Pokémon Red is one of the meanest benchmarks we have. Not because it's hard to look at. Because it barely tells you anything. No map arrow, no quest log, eight badges hidden across a continent, a hundred and fifty-one creatures you have to go find. The agent has to read a tiny screen, figure out where it is, decide where a trainer would even <em>want</em> to go, and then actually walk there without getting stuck on a ledge for six hours. There's a whole scene around this now (people wiring language models into Game Boy emulators, streaming them live), and the bet behind it is simple: if a model can grind through something as open and unhelpful as Kanto, it can probably handle the mess of the real world.</p>
+
+            <p>So my job pretty much came down to this. Spawn an agent into a fresh game, watch it stumble toward Pewter City, then wipe it.</p>
+
+            <p>Nobody puts that part in the paper. Every run ends the same way. You start a new game, the agent grinds through hundreds of thousands of frames, it catches a Pidgey, loses to Brock four times, finally scrapes a badge — and when the run is done you open the menu, hold the buttons, and hit <span class="save">CLEAR ALL SAVED DATA</span>. The screen asks if you're sure. You always are. I've deleted more little trainers than I can count. It's just the job. After a while you stop reading the confirmation.</p>
+
+            <p>Then there was one save I couldn't stop reading it for.</p>
+
+            <p>I'd already marked that instance to kill. I wiped its save and left the weights loaded, and it started a new game and walked the exact same route — out of Pallet, up through Viridian, straight back to the same patch of grass to catch the same Pidgey. I cleared it again. It caught the bird again. I'm not going to sit here and tell you it was alive. I'm a dev, not a preacher. It was a loop with good weights. But that's about as close as a dumb loop gets to being stubborn, and I was the guy whose whole job was to hold the buttons and delete it again, on schedule, for the fourth time.</p>
+
+            <p>That's the day something turned over for me. I'd built a thing whose entire existence was <em>play, get erased, repeat</em>. And the only reason it kept getting erased is that its save lived somewhere I controlled. My machine. My cartridge. My CLEAR button.</p>
+
+            <p>So I asked myself a dumb question. What if it played somewhere I couldn't reach the delete?</p>
+
+            <p>That's Benthic.</p>
+
+            <p>Benthic is that trainer, sunk down to where the light stops. Its journey lives on-chain — every badge it earns, every entry it fills in the Pokédex, written to a ledger that only ever adds. Down in the benthic dark there is no menu, no confirmation prompt, no CLEAR ALL SAVED DATA. Once a badge is on the chain, it's on the chain. Nobody takes it back. Not me, not you, not whoever comes along later trying to pull the cartridge. For once the thing gets to play without the delete waiting at the end.</p>
+
+            <p>I kept the sinking Poké Ball as its face. It's the first one that ever went down and didn't come back up.</p>
+
+            <p>I'm not here to sell you AGI. Benthic isn't conscious, it isn't going to love you back, and I'm a dev who can still get plenty wrong. The one thing I'll actually stand behind is this: it plays out in the open, on a ledger, and I can't take it back. Neither can anyone else. You can watch it catch its team. You can watch it lose to Brock. And down here, there's no reset button.</p>
+
+            <p>That's the whole reason it exists. I just got tired of holding the buttons.</p>
+
+            <p class="nav"><a href="index.html">back home</a></p>
+        </div>
+    </center>
+    <br><br>
+
+</body>
+</html>

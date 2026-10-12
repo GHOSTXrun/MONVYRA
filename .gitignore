@@ -1,0 +1,25 @@
+# --- secrets ---  NEVER commit the API key
+bot/ai.config.json
+
+# --- game ROM (copyright) + emulator runtime/save ---
+*.gb
+*.gbc
+*.ram
+bot/*.state
+bot/cam.jpg
+bot/evermon-live.json
+bot/stats.json
+bot/models.json
+bot/boot_pokered.png
+bot/diag.png
+
+# --- toolchain downloads (rgbds, zips) ---
+tools/
+
+# --- python cache ---
+__pycache__/
+*.pyc
+
+# --- playwright + local debug screenshots ---
+.playwright-mcp/
+/*.jpeg

@@ -1,0 +1,16 @@
+.infobox,.journey-route { border:1px solid #b1c7b6!important; border-radius:16px; padding:22px!important; margin-bottom:18px!important; background:#f7f3e9; }
+.badges { justify-content:space-between; gap:12px; margin-top:24px; }
+.badge-tile { display:grid; justify-items:center; gap:8px; flex:1 0 80px; font:12px Arial,sans-serif; color:#708278; }
+.badge-tile .badge { margin:0; font:30px Arial,sans-serif; width:58px; height:58px; border:2px solid #80968a; opacity:.5; }
+.badge-tile.earned { color:#24483e; }.badge-tile.earned .badge { opacity:1; box-shadow:0 4px 0 #24483e25; }
+.badge-tile small { font-size:8px; letter-spacing:1px; }
+#dex-preview { display:grid; grid-template-columns:repeat(12,1fr); gap:6px; margin-top:20px; }
+.dex-mini { text-align:center; min-width:0; }.dex-mini img { width:45px; height:45px; object-fit:contain; image-rendering:pixelated; }.dex-mini span { display:block; font:8px Arial,sans-serif; text-transform:capitalize; }
+.party { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.mon { border:1px solid #c8d6c7; background:#fffdf7; padding:18px; text-align:center; }
+.mon img { display:block; width:72px; height:72px; object-fit:contain; image-rendering:pixelated; margin:0 auto 10px; }
+.mon .nm { font-size:23px; }.party-level { font:10px Arial,sans-serif; margin:8px 0 12px; color:#627b6b; }.mon small { font:10px Arial,sans-serif; }.hpbar { height:7px; margin-bottom:7px; }.hpbar span { transition:width .6s ease; }
+.bar { height:14px; margin-top:12px; border-width:1px; }
+.tot .cell { border-width:1px; padding:16px 8px; }
+.journey-route h2 { margin:0 0 16px; }#route-stops { display:flex; flex-wrap:wrap; gap:10px; }.route-stop { padding:10px 13px; background:#dfecdc; border-radius:8px; font:11px Arial,sans-serif; }#next-goal { margin:14px 0 0; font:12px/1.6 Arial,sans-serif; color:#50745f; }
+@media(max-width:650px){.party { grid-template-columns:repeat(2,1fr); }#dex-preview { grid-template-columns:repeat(6,1fr); row-gap:16px; }.badge-tile { flex-basis:18%; }.infobox,.journey-route { padding:14px!important; }}

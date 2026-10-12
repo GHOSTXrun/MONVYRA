@@ -1,0 +1,58 @@
+.screen .pika-stage { position:absolute; inset:0; padding:0; overflow:hidden; background:linear-gradient(#bcebd6 0%,#e4f4c9 70%); color:#173d32; font-family:Arial,sans-serif; }
+.pika-topline { position:absolute; top:52px; left:18px; right:18px; display:flex; justify-content:space-between; gap:10px; z-index:2; font-size:10px; letter-spacing:1px; font-weight:bold; }
+.pika-sun { position:absolute; width:65px; height:65px; top:19%; right:16%; border-radius:50%; background:#ffe79b; box-shadow:0 0 0 14px #ffe79b30; }
+.pika-cloud { position:absolute; width:95px; height:22px; border-radius:25px; background:#ffffffa8; top:27%; left:10%; animation:cloud-drift 7s ease-in-out infinite alternate; }
+.cloud-two { top:38%; left:65%; width:65px; animation-delay:-3s; }
+.pika-hill { position:absolute; width:90%; height:50%; border-radius:50% 50% 0 0; background:#80bd85; bottom:8%; left:-32%; transform:rotate(12deg); }
+.hill-two { background:#66ae81; left:42%; bottom:4%; transform:rotate(-15deg); }
+.pika-ground { position:absolute; bottom:0; height:31%; width:100%; background:repeating-linear-gradient(90deg,transparent 0 38px,#55855d1c 38px 40px),#a1c980; border-top:5px solid #588f62; }
+.pika-performer { position:absolute; left:50%; top:49%; width:185px; height:180px; transform:translate(-50%,-50%); }
+.screen img.pika-sprite { display:block; position:absolute; width:185px; height:170px; object-fit:contain; mix-blend-mode:multiply; animation:pika-hop 1.5s ease-in-out infinite; transform-origin:50% 100%; }
+.pika-shadow { position:absolute; bottom:0; left:30px; width:125px; height:19px; border-radius:50%; background:#244d4236; animation:shadow-breathe 1.5s ease-in-out infinite; }
+.pika-greeting { position:absolute; top:22%; left:25%; background:#fffdf2; border:2px solid #285444; border-radius:14px 14px 0 14px; padding:10px 16px; font-weight:800; font-size:16px; transform:rotate(-4deg); z-index:2; }
+.pika-caption { position:absolute; bottom:17%; width:100%; display:grid; gap:8px; padding:0 12px; }
+.pika-caption strong { font-size:clamp(15px,2vw,22px); letter-spacing:2px; }
+.pika-caption span { font-size:12px; }
+.pika-cheer { position:absolute; bottom:5%; left:50%; transform:translateX(-50%); border:0; border-radius:10px; padding:11px 20px; white-space:nowrap; background:#173d32; color:#fffbe7; cursor:pointer; font-weight:bold; z-index:4; box-shadow:0 4px 0 #102a22; }
+.pika-cheer:hover { background:#286c51; }
+.pika-cheer:focus-visible { outline:3px solid #e33d35; outline-offset:3px; }
+.pika-spark { position:absolute; color:#ffe356; text-shadow:1px 2px #66804d; font-size:36px; animation:spark-blink 1s steps(2) infinite; }
+.spark-one { left:25%; top:48%; }.spark-two { right:25%; top:42%; animation-delay:.5s; }
+.screen .scan { opacity:.18; }
+.cheering .pika-sprite { animation:pika-cheer .3s ease-in-out 6; }
+@keyframes pika-hop { 0%,100% { transform:translateY(0) rotate(-3deg); } 50% { transform:translateY(-15px) rotate(3deg); } }
+@keyframes pika-cheer { 0%,100% { transform:translateY(0) rotate(-8deg); } 50% { transform:translateY(-30px) rotate(8deg); } }
+@keyframes shadow-breathe { 50% { transform:scale(.8); opacity:.5; } }
+@keyframes cloud-drift { to { transform:translateX(22px); } }
+@keyframes spark-blink { 50% { opacity:.25; transform:scale(.7); } }
+@media(max-width:500px) { .screen { aspect-ratio:4/5; } .pika-topline { font-size:8px; left:10px; right:10px; }.pika-greeting { top:24%; left:15%; font-size:12px; }.pika-performer { transform:translate(-50%,-50%) scale(.8); top:51%; }.pika-caption strong { font-size:15px; } }
+@media(prefers-reduced-motion:reduce) { .pika-stage * { animation:none!important; } }
+.pika-performer { mix-blend-mode:multiply; }
+/* Animated MONVYRA workflow console */
+.feedcol { min-width:0; }
+.feedbox { max-height:none; min-height:100%; }
+.code-terminal { margin-top:14px; border-radius:12px; overflow:hidden; background:#102a25; color:#d5f2df; border:1px solid #32634f; box-shadow:0 8px 24px #173d3212; }
+.terminal-bar { display:flex; align-items:center; justify-content:space-between; gap:8px; background:#1c3d33; padding:12px 10px; font:10px Consolas,monospace; color:#b9d9c9; }
+.terminal-lights { color:#efb66c; white-space:nowrap; font-size:9px; }
+.terminal-status { color:#ffe599; font-size:9px; border:1px solid #827b46; border-radius:4px; padding:2px 4px; }
+.terminal-sub { display:flex; gap:6px; padding:14px 10px 8px; font:9px Consolas,monospace; letter-spacing:.5px; color:#88bda6; }
+.terminal-pulse { margin-left:auto; color:#8cddb0; animation:console-pulse 2s ease-in-out infinite; }
+#agent-code { height:310px; overflow:auto; margin:0; padding:12px 8px; font:11px/1.95 Consolas,'Courier New',monospace; white-space:pre-wrap; overflow-wrap:anywhere; scrollbar-width:thin; scrollbar-color:#447960 #102a25; }
+.code-line { display:flex; align-items:flex-start; min-height:21px; }
+.line-number { flex:0 0 25px; color:#5d8c76; user-select:none; }
+.code-text { flex:1; min-width:0; }
+.syntax-comment { color:#81aa95; }.syntax-keyword { color:#d3b1f2; }.syntax-string { color:#f3d991; }.syntax-status { color:#76dcc0; }.syntax-code { color:#e0eee5; }
+.terminal-footer { display:flex; justify-content:space-between; align-items:center; padding:9px 12px; border-top:1px solid #284b3c; color:#85b69d; font:8px Consolas,monospace; letter-spacing:.6px; }
+.terminal-cursor { font-size:16px; color:#b7f2bf; animation:console-pulse .8s steps(2) infinite; }
+.console-caption { padding:10px 0; color:#587465; font:10px/1.5 Arial,sans-serif; }
+@keyframes console-pulse { 50% { opacity:.35; } }
+@media(prefers-reduced-motion:reduce) { .terminal-pulse,.terminal-cursor { animation:none; } }.character-switch { position:absolute; z-index:4; left:50%; bottom:14%; transform:translateX(-50%); display:flex; align-items:center; gap:10px; white-space:nowrap; }
+.character-switch button { border:1px solid #28544455; border-radius:7px; background:#fffdf0df; color:#173d32; padding:4px 10px; font:bold 16px Arial,sans-serif; cursor:pointer; }
+.character-switch button:last-child { font-size:10px; padding:7px 10px; }
+.character-switch span { font:10px Consolas,monospace; color:#173d32; }
+.character-switch button:focus-visible { outline:3px solid #e33d35; outline-offset:2px; }
+.pika-caption { bottom:24%; }
+.pika-stage { transition:background .8s; }
+.pika-ground { transition:background-color .8s; }
+.pika-greeting { max-width:70%; }
+@media(max-width:500px) { .character-switch { gap:6px; }.pika-caption { bottom:25%; }.pika-caption span { font-size:10px; }.pika-caption strong { font-size:13px; } }

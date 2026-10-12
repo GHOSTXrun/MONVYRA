@@ -1,0 +1,582 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+/* these are variables that are being used in the code
+these tended to confuse some people, so I only kept 
+the images as variables */
+:root {
+  /*REGULAR IMAGES*/
+  --header-image: url("img/header.png");
+  --body-bg-image: url("img/bg.jpg");
+  
+  /*COLORS*/
+  --col-bg: #BFD9C2; /*Curently a light white green*/
+  --col-bgLight: #EAF3EB;/*Curently a VERY white green*/
+  --col-darkContent: #BFD9C2; /*currently a light white green*/
+  --col-lightContent: #254041; /*currently a dark grey blue*/
+  --col-bgAccent: #FFDD00; /*currently a bright yellow*/
+  --col-theme: #2C8C39; /*currently a green*/
+  --col-darkTheme: #172815; /*currently a dark forest green*/
+}
+
+/*FONTS*/
+@font-face {
+  font-family: Body;
+  src: url('fonts/Pixolde.ttf');
+}
+
+@font-face {
+  font-family: Body;
+  src: url('fonts/Pixolde-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Body;
+  src: url('fonts/Pixolde-Italic.ttf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Body;
+  src: url('fonts/Pixolde-Italic.ttf');
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Header;
+  src: url('fonts/PearSoda.ttf');
+}
+  head {
+    position:relative;
+  }
+  
+  body {
+    font-family: 'Body';
+    font-size: 20px;
+    margin: 0;
+    background-color: var(--col-bg);
+    /* you can delete the line below if you'd prefer to not use an image */
+    color: var(--col-lightContent);
+    background-image: var(--body-bg-image);
+    background-size:100%;
+    background-attachment: fixed;
+    background-position: top center;
+    /* CUSTOM CURSOR !*/
+    cursor: url("https://downloads.totallyfreecursors.com/cursor_files/magnifying.cur"), url("https://downloads.totallyfreecursors.com/thumbnails/magnifying.gif"), auto;
+  }
+  *{ 
+    box-sizing: border-box;
+  }
+  A:hover{cursor: url("https://downloads.totallyfreecursors.com/cursor_files/exclamation.ani"), url("https://downloads.totallyfreecursors.com/thumbnails/exclamation.gif"), auto;}
+  
+  #container {
+    max-width: 900px;
+      /* this is the width of your layout! */
+      /* if you change the above value, scroll to the bottom
+      and change the media query according to the comment! */
+    margin: 0 auto;
+      /* this centers the entire page */
+  }
+  #container a {
+    color: var(--col-darkTheme);
+    font-weight: bold;
+      /* if you want to remove the underline
+     you can add a line below here that says:
+     text-decoration:none; */
+  }
+  #header {
+    width: 100%;
+    /*background-color: #2C8C39;*/
+    /* header color here! */
+    height: 150px;
+    /* this is only for a background image! */
+    /* if you want to put images IN the header, 
+    you can add them directly to the <div id="header"></div> element! */
+    background-image: var(--header-image);
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size: contain;
+  }
+  #navbar {
+    height: 40px;
+    background-color: var(--col-theme);
+    /* navbar color */
+    width: 100%;
+  }
+  #navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+  }
+  #navbar li {
+   padding-top: 10px;
+  }
+  #navbar li a {
+    color: var(--col-darkTheme);
+    /* navbar text color */
+    font-weight: 800;
+    text-decoration: none;
+    /* this removes the underline */
+    }
+
+    /* navigation link when a link is hovered over */
+  #navbar li a:hover {
+      color: var(--col-bgAccent);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+  }
+
+  #flex {
+    display: flex;
+  } aside {/* this colors BOTH sidebars if you want to style them separately,create styles for #leftSidebar and #rightSidebar */
+      background-color: var(--col-darkTheme);
+      color: var(--col-darkContent);
+      width: 200px;
+      padding: 20px;
+      font-size: smaller;
+      /* this makes the sidebar text slightly smaller */
+   }
+    
+
+  /* this is the color of the main content area,between the sidebars! */
+  main {
+    position:relative;
+    background-color: var(--col-bg);
+    flex: 1;
+    padding: 20px;
+    order: 2;
+    
+  }
+  
+    
+
+    /* what's this "order" stuff about?? allow me to explain! if you're using both sidebars, the "order" value tells the CSS the order in which to display them.
+    left sidebar is 1, content is 2, and right sidebar is 3! */
+   #leftSidebar {
+      order: 1;
+    }
+  #navSidebar {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+  }
+  
+  footer {
+    color: var(--col-theme);
+    background-color: var(--col-darkTheme);
+    /* background color for footer */
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    /* this centers the footer text */
+  }
+    sup, sub {
+      font-size: 12px;
+    }
+    h1, h2, h3 {
+      font-family: 'Header';
+    }
+    
+    h1 {
+      color: var(--col-darkTheme);
+      font-size: 35px;
+    }
+    h2 {
+      color: var(--col-theme);
+      font-size: 30px;
+      text-decoration-style: wavy;
+    }
+    h3 {
+      color: var(--col-theme);
+      text-decoration-line: underline;
+      font-size: 25px;
+    }
+  
+    strong {
+      /* this styles bold text */
+      color: var(--col-darkTheme);
+    }
+    polygon {
+      stroke-width: 5;
+      stroke: red;
+      fill: none;
+      pointer-events: visible;
+    }
+    
+    a{
+      color: var(--col-theme);
+      text-decoration: underline dotted;
+    }
+    a:hover {
+      color: var(--col-bgAccent);
+      text-decoration: underline overline;
+      text-decoration-thickness: 2px;
+    }
+  
+    polygon:hover {
+      fill: red;
+    }
+    
+    #mappol {
+        position: relative;
+        width: 100%;
+        vertical-align: middle;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    #mappol svg { 
+        display: inline-block;
+        position: absolute;
+        top: 0; 
+        left: 0;
+    }
+  
+    /* this is just a cool box, it's the darker colored one */
+    .box {
+      background-color: var(--col-theme);
+      color: var(--col-darkTheme);
+      border: 3px solid var(--col-bgAccent);
+      padding: 10px;
+    }
+    .contentBox {
+      background-color: var(--col-bg);
+      color: var(--col-lightContent);
+      border: 3px solid var(--col-theme);
+      padding: 1px;
+      margin: auto;
+    }
+    
+    .pagebox{
+      background-color: var(--col-bg);
+      color: var(--col-lightContent);
+      border: 5px solid var(--col-lightContent);
+      border-radius: 3px;
+      padding: 3px;
+      margin: auto;
+    }
+    
+    .locbox{
+      background-color: var(--col-bg);
+      color: var(--col-lightContent);
+      border: 5px solid var(--col-lightContent);
+      border-radius: 3px;
+      padding: 3px;
+      width: 700px;
+      margin: auto;
+    }
+    
+    .titlebox{
+      background-color: var(--col-theme);
+      border: 3px solid var(--col-theme);
+      border-radius: 1px;
+      
+      color: var(--col-darkContent);
+      font-family: 'Header';
+      font-size: 30px;
+      
+      padding: 3px;
+      margin: auto;
+      margin-bottom: 5px;
+    }
+    
+    .findbox {
+      background-color: var(--col-theme);
+      border: 3px solid var(--col-theme);
+      border-radius: 10px;
+      width: 400px;
+      
+      color: var(--col-darkContent);
+      font-family: 'Header';
+      font-size: 20px;
+      text-decoration-style: wavy;
+      
+      padding: 5px;
+      margin: auto;
+      margin-bottom: 5px;
+    }
+    
+    .textbox {
+      background-color: var(--col-bgLight);
+      width: 600px;
+      border: 3px solid var(--col-theme);
+      border-radius: 10px;
+      
+      color: var(--col-lightContent);
+      
+      padding: 5px;
+      margin: auto;
+      margin-bottom: 5px;
+    }
+    
+    .infobox {
+      background-color: var(--col-bg);
+      color: var(--col-lightContent);
+      border: 3px solid var(--col-theme);
+      border-radius: 1px;
+      padding: 3px;
+      margin: auto;
+    }
+    
+    
+    .updates{
+      border: 9px solid var(--col-lightContent);
+      border-radius: 10px;
+      padding: 5px;
+      text-align: center;
+      color: var(--col-lightContent);
+      width: 300px;
+      height: 240px;
+      overflow: auto;
+    }
+    .todo{
+      border-width: 5px;
+      border-radius: 10px;
+      border-style: dotted var(--col-lightContent);
+      background-color: var(--col-bgAccent);
+      padding: 20px;
+      text-align: left;
+      width: 300px;
+      height: 200px;
+      margin: auto;
+      overflow: auto;
+      color: var(--col-lightContent);
+    }
+    .hcontainer{
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      text-align: center;
+      color: var(--col-lightContent);
+      width: 300px;
+      height: 250px;
+      overflow: auto;
+    }
+    .himg{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .hoverlay{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: var(--col-theme);
+    }
+    .hcontainer:hover .hoverlay {
+      opacity: 1;
+    }
+    
+    /*UPDATES*/
+    .update::before{
+      content: 'Find Pokemon! Platinums page has been completed! Thank you SO MUCH to Shiningforcelibrary for their help with translating this book! "Find Pokemon! A New Adventure" also has its own page now with scans of all its scenes. Check these pages out!- Prof Abel 2/18/24';
+      color: var(--col-darkContent);
+    }
+    .gcontainer {
+    /* We first create a flex layout context */
+    display: flex;
+    
+    /* Then we define the flow direction 
+       and if we allow the items to wrap 
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+    flex-flow: row wrap;
+    align-items: center;
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    
+  }
+  
+  .gitem {
+    background: var(--col-bg);
+    padding: 5px;
+    width: 300px;
+    height: 250px;
+    margin-top: 10px;
+    border: 3px solid var(--col-lightContent);
+    border-radius: 10px;
+    position: relative;
+  }
+  .gquote {
+    background: var(--col-bgLight);
+    width: 75%;
+    height: 30px;
+    color: var(--col-lightContent);
+    font-family: 'Header';
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+  }
+  .goverlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    transition-delay: .5s;
+    background-color: var(--col-theme);
+    border: 3px solid var(--col-theme);
+    border-radius: 10px;
+  }
+  .gitem:hover .goverlay {
+    opacity: 1;
+  }
+  .gitem img{
+    max-height: 85%;
+    min-width: 85%;
+    object-fit: scale-down;
+    vertical-align: top;
+  }
+  .gtext{
+      color: var(--col-bgLight);
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+  }
+    /*MY ADDITIONS*/
+    th {
+      background-color: var(--col-theme);
+      color: var(--col-darkContent);
+    }
+    td {
+      border: 1px solid var(--col-theme);
+      border-radius: 5px;
+    }
+    table {
+      width: 100%; 
+    }
+    li {
+      text-align: left;
+    }
+    #sticker, #sticker2 {
+      position: absolute;
+      z-index: 9;
+    }
+    #sticker :hover, #sticker2 :hover{
+      animation-name: bounce;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      
+      cursor: move;
+    }
+    
+    @keyframes bounce {
+      0% {
+        transform: translate(0px, 0px);
+      }
+      50% {
+        transform: translate(0px, -10px);
+      }
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+    
+    #greyimg :hover, #greyimg2 :hover, #greyimg3 :hover, #greyimg4 :hover, #greyimg5 :hover, #greyimg6 :hover, #greyimg7 :hover, #greyimg8 :hover,#greyimg9 :hover,#greyimg10 :hover,#greyimg11 :hover {
+      
+      /* Start the shake animation and make the animation last for 0.5 seconds */
+      animation: shake 0.5s;
+    
+      /* When the animation is finished, start again */
+      animation-iteration-count: infinite; 
+      
+    }
+    .shrink {
+      transform-origin: center;
+      transform: scale(0.8);
+    }
+    .grow {
+      transform-origin: center;
+      transform: scale(1);
+    }
+
+    @keyframes shake {
+      0% { transform: scale(1.2) translate(0px, 0px) rotate(0deg); } 
+      20% { transform: scale(1.2) translate(2px, 0px) rotate(0deg); }     
+      40% { transform: scale(1.2) translate(2px, 0px) rotate(1deg); }      
+      60% { transform: scale(1.2) translate(0px, 0px) rotate(0deg); }      
+      80% { transform: scale(1.2) translate(-2px, 0px) rotate(0deg); }      
+      100% { transform: scale(1.2) translate(-2px, 0px) rotate(-1deg); }
+    }
+    
+    
+    #demo {
+      color: var(--col-lightContent);
+      font-family: 'Header';
+      text-align: center;
+    }
+    /* CSS for extras */
+  
+    #topBar {
+      width: 100%;
+      height: 30px;
+      padding: 10px;
+      font-size: smaller;
+      color: var(--col-theme);
+      background-color: var(--col-darkTheme);
+    }
+  
+    /* BELOW THIS POINT IS MEDIA QUERY */
+  
+  /* so you wanna change the width of your page? 
+  by default, the container width is 900px.
+  in order to keep things responsive, take your new height,
+  and then subtrack it by 100. use this new number as the 
+  "max-width" value below
+  */
+  
+  @media only screen and (max-width: 800px) {
+      #flex {
+        flex-wrap: wrap;
+      } aside {
+        width: 100%;
+      }
+  
+  /* the order of the items is adjusted here for responsiveness!
+  since the sidebars would be too small on a mobile device.
+  feel free to play around with the order!
+  */
+      main {
+        order: 1;
+      }
+  
+      #leftSidebar {
+        order: 2;
+      }
+  
+      #rightSidebar {
+        order: 3;
+      }
+  
+      #navbar ul {
+        flex-wrap: wrap;
+      }
+  }

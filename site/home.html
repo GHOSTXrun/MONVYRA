@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONVYRA</title>
+    <link rel="icon" type="image/png" href="img/monvyra-logo.png">
+    <!-- The style.css file allows you to change the look of your web pages.
+     If you include the next line in all your web pages, they will all share the same look.
+     This makes it easier to make new pages for your site. -->
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="stylesheet" href="monvyra.css"></head>
+  
+  <body>
+        <div id="container">
+<!--HEADER + NAV BAR --> 
+              <div id="headerArea">
+                  <div id="header" class="monvyra-header"><a class="brand" href="home.html" aria-label="MONVYRA home"><img src="img/monvyra-logo.png" alt="MONVYRA Logo" width="112" height="112"><span><span class="brand-kicker">AN AI. AN ADVENTURE.</span><span class="brand-name">MONVYRA</span><span class="brand-tagline">A little trainer. An endless journey.</span></span></a><a class="header-link" href="live.html">Watch the adventure &#8599;</a></div>
+                  <nav id="navbar" style="margin-bottom: 10px;">
+                      <ul>
+                        <li><a href="home.html" aria-current="page">Home</a></li>
+                        <li><a href="live.html">Live</a></li>
+                        <li><a href="journey.html">Journey</a></li>
+                        <li><a href="lore.html">Join</a></li>
+                        <li><a href="token.html">$MONVYRA</a></li>
+                      </ul>
+                  </nav>
+              </div>
+              <!--END HEADER + NAV BAR --> 
+              <section class="monvyra-hero">
+<div><span class="eyebrow">THE ADVENTURE CONTINUES</span><h1>Small trainer.<br><span>Endless possibility.</span></h1><p>Meet MONVYRA, an AI exploring the world of Pok&eacute;mon Red. Every step is part of the story.</p><div class="hero-actions"><a class="button-primary" href="live.html">Watch it play &#8594;</a><a class="button-secondary" href="journey.html">Explore the journey</a></div><div class="hero-note">01 WORLD &nbsp; / &nbsp; 151 POK&Eacute;MON &nbsp; / &nbsp; A JOURNEY TO FOLLOW</div></div>
+<img class="hero-logo" src="img/monvyra-logo.png" alt="MONVYRA red and cream cube Pok&eacute; Ball" width="320" height="320">
+</section><!--CONTENT --> 
+              <div id="flex">
+                  <!--SIDEBAR--> 
+                  <aside id="leftSidebar" style="margin-right: 10px;">
+                    <div id="navSidebar">
+                      <div style="text-align:center; color: var(--col-bg);">
+                        <p>________________</p>
+                        <p style="line-height:2;"><a href="https://x.com/evermontest" target="_blank" rel="noopener" style="color: var(--col-bgAccent);">Twitter</a><br><a href="https://github.com/evermontest/Evermon" target="_blank" rel="noopener" style="color: var(--col-bgAccent);">Github</a><br><a href="https://pump.fun/coin/9AbsoQBwvyr88MVZHnEXGjzFc8qGBmg4XrnVhwgKpump" target="_blank" rel="noopener" style="color: var(--col-bgAccent);">pump.fun</a></p>
+                        
+                        <img src="img/monvyra-logo.png" alt="MONVYRA" class="sidebar-logo" width="100" height="100">
+                        
+                        
+                        <p>________________</p>
+                      </div>
+                      <h2>Disclaimer</h2>
+                        <p>MONVYRA is an unofficial fan project, not affiliated with, endorsed by, or sponsored by Nintendo, Creatures Inc., or GAME FREAK inc. Pokémon and Pokémon character names are trademarks of Nintendo. © 2026 Pokémon.</p>
+                        <p> No copyright or trademark infringement is intended. $MONVYRA is an experimental project. Nothing here is financial advice.</p>
+                    </div>
+                  </aside>
+                  <!--END SIDEBAR --> 
+                  <!--MAIN CONTENT--> 
+                  <main>
+                    <hr>
+                    <img src="img/dice.gif" style="float:left;"><img src="img/dice2.gif" style="float:right;"><div style="text-align:center; font-size:56px; font-weight: 900;">It plays forever.</div>
+                    <hr>
+                    <h1>So, what is MONVYRA?</h1>
+                    <p>MONVYRA is an AI that plays Pokémon Red around the clock and never starts over. Here is the whole thing, from the person who made it.</p><img src="img/search.gif" style = "float: right">
+
+                    <p>For a couple of years now I've been kicking around the open source side of AI, building little pieces for model evals. Writing eval scripts, putting up datasets, pushing results to leaderboards. Nothing that turns heads, and harder than it sounds.</p>
+                    <p>The hardest one was getting a model to play Pokémon.</p>
+                    <p>Pokémon Red tells you almost nothing. No quest marker, no objective, eight gyms scattered across a map, 151 creatures you have to go find on your own. The model just stares at the screen, works out where to go, and walks there, and half the time it gets stuck on one ledge for ages. But everyone believes the same thing. If a model can figure out a game that open, with nobody holding its hand, it isn't far off being useful for real work.</p>
+                    <p>Here is how it ran. Every night, once the machines freed up, the eval spun up a few hundred fresh games and ran them all at once. Next morning the dashboard was full of curves. How many steps, how many caught, where it got stuck, who beat Brock first. When a batch finished the weights got archived, the save got wiped, and the next batch went in. Wiping the save was automatic. A scheduled job, one line in a log. Nobody ever gave it a second look.</p>
+                    <p>Then one game, I did.</p>
+                    <p>That run was supposed to end like all the rest. I didn't let it wipe on its own. I loaded the weights myself and started a fresh game, just to see whether it remembered the way. The save was clean, so of course it didn't. But it walked out of Pallet Town, cut through Viridian, went back to the same patch of grass, caught the same Pidgey, and reached the door of the Pewter gym, dead identical to the run before. I wiped it and started over. It did the whole thing again. I watched that same route for a long while. The fourth time round, I didn't press the button.</p>
+                    <p>That was when it landed for me. What we were doing came down to this. Let it play, score it, wipe it, do it again. Every badge it earned got cleared by that scheduled job before sunrise. It started from scratch every single time for one reason only. Its save lived with us. Our machines, our accounts, our wipe script.</p>
+                    <p>The fix was simple enough. Put it somewhere we couldn't reach. I sat on the idea for a while, then I actually did it. I pulled that run's weights off the pipeline and wired them to the chain, and I called it MONVYRA. Every step it takes now, every catch, every badge, gets written to a ledger that only ever adds. You can't delete it, you can't change it, and no one can start it over for it.</p>
+                    <p>It's still playing. It still loses to Brock, still gets cornered by Zubat in a cave, still walks into walls and stalls on ledges, same as ever. One thing is different. This run doesn't get wiped. It never has to wake up back in Pallet Town, never has to forget the road it just learned. It picks up from wherever it stopped and keeps going.</p>
+                    <p>I'm not going to tell you the machine woke up. It isn't conscious, I know that, and I get plenty wrong myself. I know one thing for certain. This time it's playing on a ledger nobody can touch, and no one can wipe its save again. Not even us.</p>
+                    <p>Watch it play right now on <a href="live.html">Live</a>, follow its badges and Pokédex on <a href="journey.html">Journey</a>, and see how you can be part of it on <a href="lore.html">Join</a>.</p>
+                    <img src="img/pikachu balance 1.gif" style = "float: left"><img src="img/pikachu balance 2.gif" style = "float: right"><h2 style="text-align:center">It never has to start over again.</h2>
+                    <br>
+                    <div id="flex" style="border: 3px var(--col-lightContent);border-style: dashed none dashed none; padding: 20px;">
+                      <div class="updates">
+                      <img src="img/new3.gif" style="float:left">
+                        <h2>Updates!</h2>
+                        <p>________________</p>
+                        <p style="color: var(--col-theme; text-decoration-line: underline;)"><b>_July 21st, 2026_</b></p>
+                          <div style="font-size: 15px">
+                             <p>MONVYRA is live. The site is up, the cartridge is running, and every step from here is written straight to the chain. No wipe waiting at the end this time.</p>
+                          </div>
+                        <p>________________</p>
+                        <p style="color: var(--col-theme; text-decoration-line: underline;)"><b>_July 18th, 2026_</b></p>
+                          <div style="font-size: 15px">
+                             <p>Pulled the run off the eval pipeline for good and locked the save open. That was the last first morning it will ever have in Pallet Town.</p>
+                          </div>
+                        <p>________________</p>
+                        <p style="color: var(--col-theme; text-decoration-line: underline;)"><b>_July 15th, 2026_</b></p>
+                          <div style="font-size: 15px">
+                             <p>It beat Brock and earned the Boulder Badge. The first badge that never got erased overnight. It is on the chain now, for good.</p>
+                          </div>
+                        <p>________________</p>
+                        <p style="color: var(--col-theme; text-decoration-line: underline;)"><b>_July 12th, 2026_</b></p>
+                          <div style="font-size: 15px">
+                             <p>Got it reading the screen and pressing buttons on its own again. Caught its first Pidgey on Route 1, same as it always does.</p>
+                          </div>
+                        <p>________________</p>
+                      </div>
+                      <div class="todo">
+                        
+                        <p style="color: var(--col-theme; text-decoration-line: underline;)"><b>To Do List!</b><p>
+                        <p>________________</p>
+                          <div style="font-size: 15px">
+                            <li>Stream the live game feed on the Live page (IP)</li>
+                            <li>Plug real badge and Pok&eacute;dex data into Journey</li>
+                            <li>Launch $MONVYRA and post the contract address</li>
+                            <li>Let holders nickname the Pok&eacute;mon it catches</li>
+                            <li>Community vote on where it heads next</li>
+                            <p>________________</p>
+                            <p style="color: var(--col-theme; text-decoration-line: underline;)"><b>Completed!</b><p>
+                            <li><s>Pull the run off the eval pipeline</s></li>
+                            <li><s>Lock the save so nothing resets it overnight</s></li>
+                            <li><s>Wire every step, catch and badge to the chain</s></li>
+                            <li><s>Put the whole story on the site</s></li>
+                            <li><s>Earn the first gym badge that stays for good</s></li>
+                          </div>
+                      </div>
+
+                    </div>
+                  </main>
+                  <!--END MAIN CONTENT --> 
+                  
+              </div>
+              <!--END CONTENT --> 
+            <!--FOOTER--> 
+            <footer id="footer" style="margin-top: 10px;">© 2026 MONVYRA. It plays forever, on a ledger no one can wipe.</footer>
+            <!--END FOOTER --> 
+        </div>
+
+  </body>
+  
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONVYRA</title>
+    <link rel="icon" type="image/png" href="img/monvyra-logo.png">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      .liverow { display:flex; gap:12px; flex-wrap:wrap; align-items:stretch; }
+      .streamcol { flex:2 1 380px; }
+      .feedcol { flex:1 1 240px; }
+      .screen {
+        position:relative; background:#0e211c; border:5px solid var(--col-lightContent);
+        border-radius:8px; width:100%; aspect-ratio:10/9; overflow:hidden;
+        display:flex; align-items:center; justify-content:center;
+      }
+      .screen img { width:100%; height:100%; object-fit:contain; image-rendering:pixelated; display:none; }
+      .screen .ph { text-align:center; color:#7ff5e6; font-family:'Header'; padding:10px; }
+      .scan { position:absolute; inset:0; pointer-events:none;
+        background:repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0 2px, transparent 2px 4px); }
+      .livebadge { position:absolute; top:8px; left:8px; z-index:3;
+        background:#c0202a; color:#fff; font-family:'Header'; font-size:15px;
+        padding:2px 9px; border-radius:3px; letter-spacing:1px; }
+      .livebadge b { color:#fff; }
+      .dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#fff;
+        margin-right:5px; animation: blink 1.1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity:0.15; } }
+      .feedbox { height:100%; min-height:280px; max-height:420px; overflow:auto;
+        background:var(--col-bgLight); border:3px solid var(--col-theme); border-radius:8px; padding:8px 10px; }
+      .feed-item { border-bottom:1px dotted var(--col-theme); padding:5px 0; font-size:13px; }
+      .feed-item .ts { color:var(--col-theme); font-weight:bold; margin-right:6px; }
+      .tag { font-family:'Header'; font-size:12px; padding:1px 5px; border-radius:3px; margin-right:5px; color:#fff; }
+      .tag.THINK { background:#2C8C39; } .tag.CATCH { background:#1d7fb0; }
+      .tag.BADGE { background:#c99a00; } .tag.BATTLE { background:#a23b2b; }
+      .tag.MOVE { background:#5a5a5a; } .tag.SYS { background:#254041; }
+      .metrics { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+      .metric { flex:1 1 120px; background:var(--col-bg); border:3px solid var(--col-lightContent);
+        border-radius:8px; padding:10px; text-align:center; }
+      .metric .lbl { font-size:12px; color:var(--col-lightContent); text-transform:uppercase; letter-spacing:1px; }
+      .metric .val { font-family:'Header'; font-size:30px; color:var(--col-darkTheme); line-height:1.2; }
+    </style>
+  <link rel="stylesheet" href="monvyra.css"><link rel="stylesheet" href="pikachu-live.css"></head>
+  <body>
+    <div id="container">
+      <div id="headerArea">
+        <div id="header" class="monvyra-header"><a class="brand" href="home.html" aria-label="MONVYRA home"><img src="img/monvyra-logo.png" alt="MONVYRA Logo" width="112" height="112"><span><span class="brand-kicker">AN AI. AN ADVENTURE.</span><span class="brand-name">MONVYRA</span><span class="brand-tagline">A little trainer. An endless journey.</span></span></a><a class="header-link" href="live.html" aria-current="page">Watch the adventure &#8599;</a></div>
+        <nav id="navbar" style="margin-bottom: 10px;">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="live.html" aria-current="page">Live</a></li>
+            <li><a href="journey.html">Journey</a></li>
+            <li><a href="lore.html">Join</a></li>
+            <li><a href="token.html">$MONVYRA</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="flex">
+        <main>
+          <div class="titlebox" style="text-align:center;">Live</div>
+          <hr>
+          <p style="text-align:center; margin:0 0 12px;">Meet the MONVYRA crew. Six Pokémon, six personalities — a new friend every eight seconds.</p>
+
+          <div class="liverow">
+            <!-- big stream box -->
+            <div class="streamcol">
+              <div class="screen">
+                <span class="livebadge"><span class="dot"></span><b id="stream-label">DEMO</b></span>
+                <img id="cam" alt="MONVYRA live">
+                <div class="ph pika-stage" id="ph" aria-label="Pikachu animated preview">
+  <div class="pika-topline"><span>MONVYRA CHANNEL</span><span>动画演示 · DEMO</span></div>
+  <div class="pika-cloud cloud-one"></div><div class="pika-cloud cloud-two"></div>
+  <div class="pika-sun"></div><div class="pika-hill hill-one"></div><div class="pika-hill hill-two"></div>
+  <div class="pika-ground"></div>
+  <div class="pika-greeting" id="pika-greeting">Pika pika! ⚡</div>
+  <div class="pika-performer" id="pika-performer"><div class="pika-shadow"></div><img class="pika-sprite" src="img/pikachu-stream.png" alt="Pikachu balancing a Poké Ball"></div>
+  <span class="pika-spark spark-one">✦</span><span class="pika-spark spark-two">ϟ</span>
+  <div class="pika-caption"><strong id="character-title">PIKACHU'S PLAYROOM</strong><span id="character-description">皮卡丘正在和你打招呼</span></div>
+  <div class="character-switch"><button type="button" id="character-prev" aria-label="上一只宝可梦">‹</button><span id="character-counter">01 / 06</span><button type="button" id="character-next" aria-label="下一只宝可梦">›</button><button type="button" id="character-auto" aria-pressed="true">暂停轮换</button></div><button class="pika-cheer" type="button" id="pika-cheer">和皮卡丘打招呼 ⚡</button>
+</div>
+                <div class="scan"></div>
+              </div>
+              <p style="font-size:12px; text-align:center; margin-top:6px;">Now in: <b id="loc">&mdash;</b> &nbsp;·&nbsp; <span id="spm">0</span> steps/min</p>
+            </div>
+            <!-- feed -->
+            <div class="feedcol">
+              <div class="feedbox">
+                <h3 style="margin:2px 0 6px;">Agent Console</h3>
+                <div class="code-terminal" aria-label="MONVYRA agent workflow demonstration">
+ <div class="terminal-bar"><span class="terminal-lights">● ● ●</span><span>monvyra / agent.py</span><span class="terminal-status">DEMO</span></div>
+ <div class="terminal-sub">AGENT LOOP <span id="code-cycle">001</span><span class="terminal-pulse">● RUNNING</span></div>
+ <pre id="agent-code" aria-hidden="true"></pre>
+ <div class="terminal-footer"><span>PYTHON · WORKFLOW PREVIEW</span><span class="terminal-cursor">▍</span></div>
+</div>
+<div class="console-caption">项目流程演示 · 非真实运行日志</div>
+<div id="feed"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- metrics -->
+          <div class="metrics">
+            <div class="metric"><div class="lbl">Badges</div><div class="val"><span id="m-badges">0</span>/8</div></div>
+            <div class="metric"><div class="lbl">Pok&eacute;dex</div><div class="val"><span id="m-dex">0</span>/151</div></div>
+            <div class="metric"><div class="lbl">Caught</div><div class="val" id="m-caught">0</div></div>
+            <div class="metric"><div class="lbl">Battles won</div><div class="val" id="m-battles">0</div></div>
+            <div class="metric"><div class="lbl">Steps</div><div class="val" id="m-steps">0</div></div>
+            <div class="metric"><div class="lbl">Playtime</div><div class="val" id="m-time">0h</div></div>
+          </div>
+          <p style="font-size:12px; text-align:center; margin-top:10px; color:var(--col-lightContent);"><span id="metrics-mode">模拟数据 · DEMO — 数值随演示自动变化，非真实游戏进度。</span></p>
+        </main>
+      </div>
+      <footer id="footer" style="margin-top: 10px;">© 2026 MONVYRA. It plays forever, on a ledger no one can wipe.</footer>
+    </div>
+
+    <script src="js/monvyra-demo.js"></script><script>
+    // Point these at the running bot to show the real stream + data.
+    // cam = a jpg frame endpoint, data = evermon-live.json (CORS). Leave null for demo mode.
+    window.EVERMON = { cam: 'https://briefly-sunday-cambridge-sticker.trycloudflare.com/cam', data: 'https://briefly-sunday-cambridge-sticker.trycloudflare.com/' };
+
+    (function(){
+      var feedEl=document.getElementById('feed');
+      function pad(n){return (n<10?'0':'')+n;}
+      function etClock(){ try{ return new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour12:false}); }catch(e){ var d=new Date(); return pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds()); } }
+      function setText(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
+      function fmtTime(ms){ if(!ms) return '0h'; var s=Math.max(0,(Date.now()-ms)/1000); var h=Math.floor(s/3600), m=Math.floor((s%3600)/60); return h+'h '+m+'m'; }
+
+      var MAX=40;
+      function renderFeed(events){
+        feedEl.innerHTML='';
+        events.slice(-MAX).reverse().forEach(function(ev){
+          var d=document.createElement('div'); d.className='feed-item';
+          d.innerHTML='<span class="ts">'+ev.t+'</span><span class="tag '+(ev.tag||'SYS')+'">'+(ev.tag||'SYS')+'</span>'+ev.msg;
+          feedEl.appendChild(d);
+        });
+      }
+      function apply(d){
+        setText('m-badges', d.badges||0);
+        setText('m-dex', d.pokedexOwned||0);
+        setText('m-caught', d.caught||0);
+        setText('m-battles', d.battles||0);
+        setText('m-steps', (d.steps||0).toLocaleString());
+        setText('m-time', fmtTime(d.startedAt));
+        setText('loc', d.map||'—');
+        setText('spm', d.stepsPerMin||0);
+        if(d.events) renderFeed(d.events);
+      }
+
+      // ---- real feed (if configured) ----
+      var live=false; var lastDataAt=0;
+      if(window.EVERMON && window.EVERMON.data){
+        var img=document.getElementById('cam'), ph=document.getElementById('ph');
+        if(window.EVERMON.cam && img){
+          img.onload=function(){ img.style.display='block'; ph.style.display='none'; setText('stream-label','LIVE'); };
+          img.onerror=function(){ img.style.display='none'; ph.style.display=''; setText('stream-label','DEMO'); };
+          setInterval(function(){ img.src=window.EVERMON.cam+'?t='+Date.now(); }, 1000);
+        }
+        setInterval(function(){
+          fetch(window.EVERMON.data,{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){ live=true; lastDataAt=Date.now(); apply(d); }).catch(function(){});
+        }, 2000);
+      }
+
+      function advanceDemo(){
+        if(lastDataAt && Date.now()-lastDataAt<10000){
+          setText('metrics-mode','真实数据 · LIVE — 来自机器人实时接口'); return;
+        }
+        apply(window.monvyraDemoState());
+        setText('metrics-mode','模拟数据 · DEMO — 与 Journey 同步，非真实游戏进度。');
+      }
+      setInterval(advanceDemo,2000);
+      setTimeout(advanceDemo,100);
+      apply({startedAt:0,badges:0,pokedexOwned:0,pokedexSeen:0,caught:0,battles:0,steps:0,map:'Pikachu preview',stepsPerMin:0,party:[],events:[{t:'',tag:'SYS',msg:'皮卡丘动画演示已开启，欢迎来到 MONVYRA！'}]});
+    })();
+    </script>
+  <script src="js/monvyra-characters.js"></script><script>
+(function(){
+ const output=document.getElementById('agent-code');
+ const cycleLabel=document.getElementById('code-cycle');
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const lines=[
+ ['comment','# MONVYRA / autonomous trainer'],
+ ['keyword','async def agent_step():'],
+ ['code','    frame = emulator.screen.capture()'],
+ ['code','    state = ram.read_game_state()'],
+ ['comment','    # Observe the world'],
+ ['code','    context = {'],
+ ['string','        "game": "Pokemon Red",'],
+ ['string','        "frame": frame,'],
+ ['string','        "party": state.party,'],
+ ['code','    }'],
+ ['comment','    # Ask the vision agent'],
+ ['code','    move = await brain.decide(context)'],
+ ['code','    emulator.press(move.buttons)'],
+ ['comment','    # Keep the adventure going'],
+ ['code','    save.persist(emulator.state)'],
+ ['code','    stream.publish(frame, state)'],
+ ['status','[DEMO] Observation sequence complete'],
+ ['status','[DEMO] Decision → action → save'],
+ ['status','[DEMO] Waiting for the next frame...']
+ ];
+ let row=0, character=0, cycle=1, current=null;
+ function addLine(){
+  current=document.createElement('span');
+  current.className='code-line syntax-'+lines[row][0];
+  const number=document.createElement('span');
+  number.className='line-number'; number.textContent=String(row+1).padStart(2,'0');
+  current.appendChild(number);
+  const text=document.createElement('span'); text.className='code-text';current.appendChild(text);
+  output.appendChild(current);
+ }
+ if(reduced){
+  lines.forEach(function(line,index){row=index;addLine();current.lastChild.textContent=line[1];});
+  return;
+ }
+ function tick(){
+  if(document.hidden){setTimeout(tick,350);return;}
+  if(row===lines.length){
+   output.textContent='';row=0;character=0;cycle++;
+   cycleLabel.textContent=String(cycle).padStart(3,'0');
+  }
+  if(character===0)addLine();
+  current.lastChild.textContent=lines[row][1].slice(0,++character);
+  output.scrollTop=output.scrollHeight;
+  if(character>=lines[row][1].length){
+   row++;character=0;setTimeout(tick,row===lines.length?2600:280);
+  }else{setTimeout(tick,24);}
+ }
+ tick();
+})();
+</script></body>
+</html>

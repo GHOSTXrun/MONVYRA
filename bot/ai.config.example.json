@@ -1,0 +1,7 @@
+{
+  "baseURL": "https://your-openai-compatible-endpoint/v1",
+  "apiKey": "YOUR_API_KEY_HERE",
+  "model": "your-vision-capable-model-id",
+  "rom": "",
+  "turnDelaySec": 1.0
+}
