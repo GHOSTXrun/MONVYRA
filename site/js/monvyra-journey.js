@@ -7,7 +7,7 @@
  let lastLive=0;
  function text(key,value){id(key).textContent=value;}
  function apply(s,real){
-  text('journey-mode',real?'LIVE · 机器人实时数据':'DEMO · 模拟旅程，与 Live 页面同步更新，非真实游戏或链上记录。');
+  text('journey-mode',real?'LIVE · Real-time bot data':'DEMO · Simulated journey, synced with Live. Not actual gameplay or on-chain records.');
   const count=Math.max(0,Math.min(8,Number(s.badges)||0));
   text('badgeCount',count);id('badgeRow').replaceChildren();
   names.forEach((name,i)=>{

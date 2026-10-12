@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,15 +68,15 @@
                 <span class="livebadge"><span class="dot"></span><b id="stream-label">DEMO</b></span>
                 <img id="cam" alt="MONVYRA live">
                 <div class="ph pika-stage" id="ph" aria-label="Pikachu animated preview">
-  <div class="pika-topline"><span>MONVYRA CHANNEL</span><span>动画演示 · DEMO</span></div>
+  <div class="pika-topline"><span>MONVYRA CHANNEL</span><span>ANIMATED PREVIEW · DEMO</span></div>
   <div class="pika-cloud cloud-one"></div><div class="pika-cloud cloud-two"></div>
   <div class="pika-sun"></div><div class="pika-hill hill-one"></div><div class="pika-hill hill-two"></div>
   <div class="pika-ground"></div>
   <div class="pika-greeting" id="pika-greeting">Pika pika! ⚡</div>
   <div class="pika-performer" id="pika-performer"><div class="pika-shadow"></div><img class="pika-sprite" src="img/pikachu-stream.png" alt="Pikachu balancing a Poké Ball"></div>
   <span class="pika-spark spark-one">✦</span><span class="pika-spark spark-two">ϟ</span>
-  <div class="pika-caption"><strong id="character-title">PIKACHU'S PLAYROOM</strong><span id="character-description">皮卡丘正在和你打招呼</span></div>
-  <div class="character-switch"><button type="button" id="character-prev" aria-label="上一只宝可梦">‹</button><span id="character-counter">01 / 06</span><button type="button" id="character-next" aria-label="下一只宝可梦">›</button><button type="button" id="character-auto" aria-pressed="true">暂停轮换</button></div><button class="pika-cheer" type="button" id="pika-cheer">和皮卡丘打招呼 ⚡</button>
+  <div class="pika-caption"><strong id="character-title">PIKACHU'S PLAYROOM</strong><span id="character-description">Pikachu is saying hello</span></div>
+  <div class="character-switch"><button type="button" id="character-prev" aria-label="Previous Pokémon">‹</button><span id="character-counter">01 / 06</span><button type="button" id="character-next" aria-label="Next Pokémon">›</button><button type="button" id="character-auto" aria-pressed="true">Pause rotation</button></div><button class="pika-cheer" type="button" id="pika-cheer">Say hello to Pikachu ⚡</button>
 </div>
                 <div class="scan"></div>
               </div>
@@ -92,7 +92,7 @@
  <pre id="agent-code" aria-hidden="true"></pre>
  <div class="terminal-footer"><span>PYTHON · WORKFLOW PREVIEW</span><span class="terminal-cursor">▍</span></div>
 </div>
-<div class="console-caption">项目流程演示 · 非真实运行日志</div>
+<div class="console-caption">Workflow demo · Not actual runtime logs</div>
 <div id="feed"></div>
               </div>
             </div>
@@ -107,7 +107,7 @@
             <div class="metric"><div class="lbl">Steps</div><div class="val" id="m-steps">0</div></div>
             <div class="metric"><div class="lbl">Playtime</div><div class="val" id="m-time">0h</div></div>
           </div>
-          <p style="font-size:12px; text-align:center; margin-top:10px; color:var(--col-lightContent);"><span id="metrics-mode">模拟数据 · DEMO — 数值随演示自动变化，非真实游戏进度。</span></p>
+          <p style="font-size:12px; text-align:center; margin-top:10px; color:var(--col-lightContent);"><span id="metrics-mode">DEMO — Simulated values update automatically; not actual game progress.</span></p>
         </main>
       </div>
       <footer id="footer" style="margin-top: 10px;">© 2026 MONVYRA. It plays forever, on a ledger no one can wipe.</footer>
@@ -162,14 +162,14 @@
 
       function advanceDemo(){
         if(lastDataAt && Date.now()-lastDataAt<10000){
-          setText('metrics-mode','真实数据 · LIVE — 来自机器人实时接口'); return;
+          setText('metrics-mode','LIVE — Real-time data from the bot'); return;
         }
         apply(window.monvyraDemoState());
-        setText('metrics-mode','模拟数据 · DEMO — 与 Journey 同步，非真实游戏进度。');
+        setText('metrics-mode','DEMO — Synced with Journey; not actual game progress.');
       }
       setInterval(advanceDemo,2000);
       setTimeout(advanceDemo,100);
-      apply({startedAt:0,badges:0,pokedexOwned:0,pokedexSeen:0,caught:0,battles:0,steps:0,map:'Pikachu preview',stepsPerMin:0,party:[],events:[{t:'',tag:'SYS',msg:'皮卡丘动画演示已开启，欢迎来到 MONVYRA！'}]});
+      apply({startedAt:0,badges:0,pokedexOwned:0,pokedexSeen:0,caught:0,battles:0,steps:0,map:'Pikachu preview',stepsPerMin:0,party:[],events:[{t:'',tag:'SYS',msg:'Pikachu animated preview is ready. Welcome to MONVYRA!'}]});
     })();
     </script>
   <script src="js/monvyra-characters.js"></script><script>
